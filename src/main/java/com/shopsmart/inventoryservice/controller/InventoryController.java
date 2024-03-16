@@ -20,8 +20,7 @@ public class InventoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<InventoryResponse> stockAvailability(@RequestParam List<String> skuCode) throws InsufficientResourcesException {
-        log.info("Received inventory check request for skuCode: {}", skuCode);
+    public List<InventoryResponse> stockAvailability(@RequestParam List<String> skuCode) {
         return inventoryService.stockAvailability(skuCode);
     }
 }
